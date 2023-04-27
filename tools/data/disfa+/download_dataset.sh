@@ -7,7 +7,7 @@ DL_URL='https://uc2a647c4cbff1a6d799b8b8bc3b.dl.dropboxusercontent.com/zip_downl
 mkdir -p ${DATA_DIR}
 mkdir -p ${RAW_DIR}
 
-cd ${RAW_DIR}; curl "DL_URL" \
+cd ${RAW_DIR}; curl "${DL_URL}" \
      -X 'GET' \
      -H 'Referer: https://www.dropbox.com/' \
      -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
@@ -15,6 +15,7 @@ cd ${RAW_DIR}; curl "DL_URL" \
      -H 'Sec-Fetch-Mode: navigate' \
      -H 'Sec-Fetch-Site: cross-site' \
      -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15' > face_dataset.zip
+
 cd ${RAW_DIR}; unzip face_dataset.zip -d disfa+
 
 find ${RAW_DIR} -name "*.zip"
