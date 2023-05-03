@@ -75,9 +75,11 @@ def traverse_dataset(root):
     """
     Traverses the disfa+ dataset and creates the directory layout
     """
-
     videos = []
     for subject in root.joinpath('Images').glob('SN*/'):
+        # Skip if subject is not dir
+        if not subject.is_dir():
+            continue
         for trail in subject.iterdir():
             action = extract_action_from_trail(trail.name)
             if not action:
