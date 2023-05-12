@@ -7,6 +7,7 @@ model=dict(backbone=dict(pretrained='../drowsiness-detector/weights/swin_base_pa
 dataset_type = 'RawframeDataset'
 data_root = 'data/disfa+/rawframes_train'
 data_root_val = 'data/disfa+/rawframes_val'
+data_root_test = 'data/disfa+/rawframes_test'
 ann_file_train = 'data/disfa+/disfa+_train_list_rawframes.txt'
 ann_file_val = 'data/disfa+/disfa+_val_list_rawframes.txt'
 ann_file_test = 'data/disfa+/disfa+_test_list_rawframes.txt'
@@ -83,7 +84,7 @@ data = dict(
         type=dataset_type,
         filename_tmpl='{:03}.jpg',
         ann_file=ann_file_test,
-        data_prefix=data_root_val,
+        data_prefix=data_root_test,
         pipeline=test_pipeline))
 evaluation = dict(
     interval=5, metrics=['top_k_accuracy', 'mean_class_accuracy'])
@@ -102,7 +103,7 @@ lr_config = dict(
     warmup_by_epoch=True,
     warmup_iters=2.5
 )
-total_epochs = 30
+total_epochs = 100
 
 # runtime settings
 checkpoint_config = dict(interval=1)
