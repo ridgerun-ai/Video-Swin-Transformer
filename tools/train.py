@@ -8,7 +8,7 @@ import warnings
 import mmcv
 import torch
 from mmcv import Config, DictAction
-from mmcv.runner import get_dist_info, init_dist, set_random_seed
+from mmcv.runner import get_dist_info, init_dist, set_random_seed, load_checkpoint
 from mmcv.utils import get_git_hash
 
 from mmaction import __version__
@@ -67,7 +67,7 @@ def parse_args():
         choices=['none', 'pytorch', 'slurm', 'mpi'],
         default='none',
         help='job launcher')
-    parser.add_argument('--local_rank', type=int, default=0)
+    parser.add_argument('--local-rank', type=int, default=0)
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -155,6 +155,11 @@ def main():
         cfg.model,
         train_cfg=cfg.get('train_cfg'),
         test_cfg=cfg.get('test_cfg'))
+
+    weights=cfg.model.backbone.get('pretrained')
+    if weights:
+        logger.info('Loading pretrained weights "' + weights + '"');
+        load_checkpoint(model, weights)
 
     if len(cfg.module_hooks) > 0:
         register_module_hooks(model, cfg.module_hooks)
