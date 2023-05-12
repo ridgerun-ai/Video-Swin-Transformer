@@ -1,0 +1,15 @@
+../../../data/disfa+/rawframes_val/anger/SN009_Y_AngerDescribed_TrailNo_1,10
+../../../data/disfa+/rawframes_val/anger/SN009_Y_AngerDescribed_TrailNo_2,12
+../../../data/disfa+/rawframes_val/anger/SN027_Y_AngerDescribed_TrailNo_2,11
+../../../data/disfa+/rawframes_val/disgust/SN001_Z_DisgustText_TrailNo_1,28
+../../../data/disfa+/rawframes_val/disgust/SN010_Z_DisgustText_TrailNo_1,15
+../../../data/disfa+/rawframes_val/disgust/SN027_Z_DisgustText_TrailNo_1,10
+../../../data/disfa+/rawframes_val/fear/SN001_Y_FearDescribed_TrailNo_2,12
+../../../data/disfa+/rawframes_val/fear/SN003_Z_FearText_TrailNo_2,34
+../../../data/disfa+/rawframes_val/fear/SN025_Z_FearText_TrailNo_1,20
+../../../data/disfa+/rawframes_val/happiness/SN004_Z_HappinessText_TrailNo_2,34
+../../../data/disfa+/rawframes_val/happiness/SN009_Y_HappyDescribed_TrailNo_1,22
+../../../data/disfa+/rawframes_val/happiness/SN010_Y_HappyDescribed_TrailNo_1,23
+../../../data/disfa+/rawframes_val/sadness/SN003_Y_SadDescribed_TrailNo_4,22
+../../../data/disfa+/rawframes_val/sadness/SN010_Z_SadnessText_TrailNo_1,22
+../../../data/disfa+/rawframes_val/sadness/SN013_Y_SadDescribed_TrailNo_1,19
